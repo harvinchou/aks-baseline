@@ -338,11 +338,11 @@ resource pipsAzureFirewall 'Microsoft.Network/publicIPAddresses@2021-05-01' = [f
   sku: {
     name: 'Standard'
   }
-  zones: [
-    '1'
-    '2'
-    '3'
-  ]
+  // zones: [
+  //   '1'
+  //   '2'
+  //   '3'
+  // ]
   properties: {
     publicIPAllocationMethod: 'Static'
     idleTimeoutInMinutes: 4
@@ -677,11 +677,11 @@ resource fwPolicy 'Microsoft.Network/firewallPolicies@2021-05-01' = {
 resource hubFirewall 'Microsoft.Network/azureFirewalls@2021-05-01' = {
   name: 'fw-${location}'
   location: location
-  zones: [
-    '1'
-    '2'
-    '3'
-  ]
+  // zones: [
+  //   '1'
+  //   '2'
+  //   '3'
+  // ]
   dependsOn: [
     // This helps prevent multiple PUT updates happening to the firewall causing a CONFLICT race condition
     // Ref: https://learn.microsoft.com/azure/firewall-manager/quick-firewall-policy
